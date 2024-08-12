@@ -1,0 +1,91 @@
+[
+    {
+        "name": "join",
+        "description": "Join to voice channel!"
+    },
+    {
+        "name": "play",
+        "description": "Play song from youtube.",
+        "options": [
+            {
+                "name": "songtitle",
+                "type": 3,
+                "description": "The title song what you hear.",
+                "required": true
+            }
+        ]
+    },
+    {
+        "name": "say",
+        "description": "Chat with bot, integrated with AI. Hold 3 second after the bot answer your questions.",
+        "options": [
+            {
+                "name": "content",
+                "type": 3,
+                "description": "The content what you want to say",
+                "required": true
+            }
+        ]
+    },
+    {
+        "name": "ping",
+        "description": "Check latency your connection."
+    },
+    {
+        "name": "activity",
+        "description": "Suggest your activity."
+    },
+    {
+        "name": "help",
+        "description": "See all commands."
+    },
+    {
+        "name": "news",
+        "description": "Get latest of indonesian news",
+        "options": [
+            {
+                "name": "source",
+                "type": 3,
+                "description": "Choose source to get news",
+                "choices": [
+                    {
+                        "name": "antara",
+                        "value": "antara"
+                    },
+                    {
+                        "name": "cnn",
+                        "value": "cnn"
+                    },
+                    {
+                        "name": "jpnn",
+                        "value": "jpnn"
+                    },
+                    {
+                        "name": "kumparan",
+                        "value": "kumparan"
+                    },
+                    {
+                        "name": "merdeka",
+                        "value": "merdeka"
+                    },
+                    {
+                        "name": "republika",
+                        "value": "republika"
+                    },
+                    {
+                        "name": "sindonews",
+                        "value": "sindonews"
+                    },
+                    {
+                        "name": "tribun",
+                        "value": "tribun"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "serverinfo",
+        "description": "Get info server"
+    }
+]
