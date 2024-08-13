@@ -3,6 +3,8 @@
 const dotenv = require("dotenv");
 const { Client, IntentsBitField, REST, Routes, Events } = require("discord.js");
 
+const logger = require("./utils/readLogger");
+
 const play = require("./command/play");
 const join = require("./command/join");
 const say = require("./command/say");
@@ -11,7 +13,7 @@ const help = require("./command/help");
 const news = require("./command/news");
 const serverinfo = require("./command/serverinfo");
 
-const listCommands = require("./command.json");
+const listCommands = require("../command.json");
 
 dotenv.config();
 
@@ -52,6 +54,10 @@ client.on(Events.InteractionCreate, async (message) => {
     if (!message.isCommand()) return;
 
     const { commandName: command } = message;
+
+    // LOGGER
+    const getServerName = message.member.guild;
+    logger(command, getServerName);
 
     switch (command) {
         case "join":
