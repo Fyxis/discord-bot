@@ -32,10 +32,6 @@
         "description": "Check latency your connection."
     },
     {
-        "name": "activity",
-        "description": "Suggest your activity."
-    },
-    {
         "name": "help",
         "description": "See all commands."
     },

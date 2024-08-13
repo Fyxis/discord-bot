@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const dotenv = require("dotenv");
 const { Client, IntentsBitField, REST, Routes, Events } = require("discord.js");
 
@@ -6,7 +7,6 @@ const play = require("./command/play");
 const join = require("./command/join");
 const say = require("./command/say");
 const ping = require("./command/ping");
-const activity = require("./command/activity");
 const help = require("./command/help");
 const news = require("./command/news");
 const serverinfo = require("./command/serverinfo");
@@ -34,7 +34,7 @@ const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
 
 (async () => {
     try {
-        await rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {
+        await rest.put(Routes.applicationCommands(CLIENT_ID), {
             body: listCommands,
         });
 
@@ -62,8 +62,6 @@ client.on(Events.InteractionCreate, async (message) => {
             return say(message);
         case "ping":
             return ping(message, client);
-        case "activity":
-            return activity(message);
         case "help":
             return help(message, client.user.tag, client.user.avatarURL());
         case "news":
